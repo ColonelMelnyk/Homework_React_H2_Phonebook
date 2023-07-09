@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types';
-
+import css from './Form.module.css'
 export const ListFilter = ({ filter, onFilterChange }) => {
   return (
-    <>
-      <p>Find contacts by name</p>
-      <input
+      <label className= {css.filter_block}> Find contacts by name
+      <input 
        value={filter}
        onChange={onFilterChange}
-        type="text"
-      />
-    </>
+        type="text"/>
+    </label>
   );
 };
 

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import css from './Form.module.css'
 export class Form extends Component {
   state = {
     name: '',
@@ -24,8 +24,8 @@ export class Form extends Component {
   render() {
     const { name, number } = this.state;
     return (
-      <form onSubmit={this.onHandleSubmit}>
-        <label>
+      <form className={css.form} onSubmit={this.onHandleSubmit}>
+        <label >
           <h2>Name</h2>
           <input
           value={name}
@@ -49,8 +49,7 @@ export class Form extends Component {
             required
           />
         </label>
-        <br /> <br />
-        <button type="submit">Add contact</button>
+        <button className={css.button} type="submit">Add contact</button>
       </form>
     );
   }

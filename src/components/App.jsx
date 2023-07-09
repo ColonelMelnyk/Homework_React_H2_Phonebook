@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import { DataContacts } from './ContactsData';
 import { ListFilter } from './ListFilter';
 import { Form } from './Form';
-
+import css from './Form.module.css'
 export class App extends Component {
   state = {
     contacts: [
@@ -49,9 +49,9 @@ export class App extends Component {
       return alert(`${name} Is already listed!`);
     }
     const addedContact = {
-      id: nanoid(),
       name: name,
       number: number,
+      id: nanoid(),
     };
 
     this.setState(prevState => ({
@@ -75,10 +75,10 @@ export class App extends Component {
     );
     return (
       <div className="app">
-        <h2>Phonebook</h2>
+        <h2 className= {css.app_title}>Phonebook</h2>
         <Form addContactHandler={this.addContactHandler} />
 
-        <h2>Contacts</h2>
+        <h2 className={css.filter_title}>Contacts</h2>
         <ListFilter
           onFilterChange={this.onHandleFilters}
           filter={this.state.filter}

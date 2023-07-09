@@ -1,9 +1,8 @@
-
+import css from './Form.module.css'
 import PropTypes from 'prop-types';
-
 export const DataContacts = ({ contacts, contactDel }) => {
   return (
-    <ul>
+    <ul className={css.contacts_list}>
       {contacts.map(contact => (
         <li  key={contact.id}>
           <p>{contact.name}: {contact.number}</p>
