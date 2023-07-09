@@ -4,6 +4,7 @@ import { DataContacts } from './ContactsData';
 import { ListFilter } from './ListFilter';
 import { Form } from './Form';
 import css from './Form.module.css'
+import Notiflix from 'notiflix';
 export class App extends Component {
   state = {
     contacts: [
@@ -46,7 +47,7 @@ export class App extends Component {
     );
 
     if (presentContact) {
-      return alert(`${name} Is already listed!`);
+    return  Notiflix.Notify.failure(`${name} Is already listed!`);
     }
     const addedContact = {
       name: name,
